@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:get/get.dart';
 
 import 'package:kosan_app/app/modules/home/bindings/home_binding.dart';
