@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:kosan_app/app/routes/app_pages.dart';
 import 'package:kosan_app/theme.dart';
 
@@ -26,29 +24,25 @@ class SplashView extends GetView<SplashController> {
                     SvgPicture.asset("assets/icons/ic_circle.svg"),
                     SizedBox(height: 20),
                     Text("Find Cozy House",
-                        style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.w500))),
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.w500)),
                     Text("to Stay and Happy",
-                        style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.w500))),
+                        style: TextStyle(
+                            fontSize: 24, fontWeight: FontWeight.w500)),
                     SizedBox(height: 20),
                     Text(
                       "Stop membuang banyak waktu",
-                      style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w300,
-                              color: grey)),
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w300,
+                          color: grey),
                     ),
                     Text(
                       "pada tempat yang tidak habitable",
-                      style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w300,
-                              color: grey)),
+                      style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w300,
+                          color: grey),
                     ),
                     SizedBox(height: 40),
                     Material(
@@ -57,7 +51,7 @@ class SplashView extends GetView<SplashController> {
                       child: InkWell(
                         borderRadius: BorderRadius.circular(17),
                         onTap: () {
-                          Get.offAndToNamed(Routes.HOME);
+                          Get.offAndToNamed(Routes.DASHBOARD);
                         },
                         child: SizedBox(
                           width: 210,
@@ -65,11 +59,10 @@ class SplashView extends GetView<SplashController> {
                           child: Center(
                             child: Text(
                               "Explore Now",
-                              style: GoogleFonts.poppins(
-                                  textStyle: TextStyle(
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.w500,
-                                      color: white)),
+                              style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                  color: white),
                             ),
                           ),
                         ),
