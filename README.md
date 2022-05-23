@@ -1,16 +1,10 @@
-# kosan_app
 
-A new Flutter project.
+# KOSAN APP
 
-## Getting Started
+aplikasi kosan online open-source, dengan aplikasi ini diharapkan pengguna dapat dengan mudah menemukan kosan yang bagus secara cepat
+## Acknowledgements
 
-This project is a starting point for a Flutter application.
+ - [Flutter](https://flutter.dev)
+ - [Firebase](https://https://firebase.google.com)
+ - [Getx State Management](https://https://pub.dev/packages/get)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
