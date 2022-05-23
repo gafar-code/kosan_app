@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -14,24 +13,24 @@ class DashboardView extends GetView<DashboardController> {
       builder: (controller) {
         return Scaffold(
           body: SafeArea(
-            child: IndexedStack(
-              index: controller.tabIndex,
+            child: Stack(
               children: [
-                HomeView(),
-                Center(
-                  child: Text('Profile'),
+                IndexedStack(
+                  index: controller.tabIndex,
+                  children: [
+                    HomeView(),
+                    Center(
+                      child: Text('Profile'),
+                    ),
+                    Center(
+                      child: Text('Notification'),
+                    ),
+                  ],
                 ),
-                Center(
-                  child: Text('Notification'),
-                ),
+                BottomNavBar()
               ],
             ),
           ),
-          bottomNavigationBar: BottomNavigationBar(
-              type: BottomNavigationBarType.fixed,
-              onTap: controller.changeTabIndex,
-              currentIndex: controller.tabIndex,
-              items: bottomNavbarItems),
         );
       },
     );

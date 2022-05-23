@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 
 import 'package:kosan_app/app/modules/dashboard/bindings/dashboard_binding.dart';
 import 'package:kosan_app/app/modules/dashboard/views/dashboard_view.dart';
+import 'package:kosan_app/app/modules/detail/bindings/detail_binding.dart';
+import 'package:kosan_app/app/modules/detail/views/detail_view.dart';
 import 'package:kosan_app/app/modules/home/bindings/home_binding.dart';
 import 'package:kosan_app/app/modules/home/views/home_view.dart';
 import 'package:kosan_app/app/modules/splash/bindings/splash_binding.dart';
@@ -31,6 +33,11 @@ class AppPages {
       name: _Paths.DASHBOARD,
       page: () => DashboardView(),
       binding: DashboardBinding(),
+    ),
+    GetPage(
+      name: _Paths.DETAIL,
+      page: () => DetailView(),
+      binding: DetailBinding(),
     ),
   ];
 }
