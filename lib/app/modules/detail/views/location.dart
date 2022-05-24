@@ -11,7 +11,7 @@ class LocationDetail extends GetView {
       children: [
         Text(
           'Location',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+          style: blackTextStyle.copyWith(fontSize: 16),
         ),
         SizedBox(height: 8),
         Row(
@@ -22,13 +22,11 @@ class LocationDetail extends GetView {
               children: [
                 Text(
                   'Jln. Kappan Sukses No.20',
-                  style: TextStyle(
-                      fontSize: 14, fontWeight: FontWeight.w300, color: grey),
+                  style: greyTextStyle.copyWith(fontSize: 16),
                 ),
                 Text(
                   'Palembang',
-                  style: TextStyle(
-                      fontSize: 14, fontWeight: FontWeight.w300, color: grey),
+                  style: greyTextStyle.copyWith(fontSize: 16),
                 ),
               ],
             ),

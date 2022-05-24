@@ -39,13 +39,12 @@ class TipsAndGudance extends GetView {
             children: [
               Text(
                 title,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),
+                style: blackTextStyle.copyWith(fontSize: 18),
               ),
               SizedBox(height: 8),
               Text(
                 'Update $time',
-                style: TextStyle(
-                    fontSize: 14, fontWeight: FontWeight.w300, color: grey),
+                style: greyTextStyle.copyWith(fontSize: 14),
               )
             ],
           )

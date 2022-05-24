@@ -79,10 +79,7 @@ class DetailView extends GetView<DetailController> {
                           width: 327,
                           child: Center(
                             child: Text('Booking Now',
-                                style: TextStyle(
-                                    color: white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500)),
+                                style: whiteTextStyle.copyWith(fontSize: 18)),
                           ),
                         ),
                       ),

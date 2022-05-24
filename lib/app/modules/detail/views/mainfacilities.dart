@@ -33,10 +33,8 @@ class MainFacilities extends GetView {
         SizedBox(height: 12),
         Row(
           children: [
-            Text('$numb',
-                style: TextStyle(
-                    fontSize: 14, color: purple, fontWeight: FontWeight.w500)),
-            Text(' $title', style: TextStyle(fontSize: 14, color: grey)),
+            Text('$numb', style: purpleTextStyle.copyWith(fontSize: 14)),
+            Text(' $title', style: greyTextStyle.copyWith(fontSize: 14)),
           ],
         )
       ],

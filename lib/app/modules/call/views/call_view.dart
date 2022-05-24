@@ -32,18 +32,14 @@ class CallView extends GetView<CallController> {
                   )),
               SizedBox(height: 60),
               Text('Amanda Shayna',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500)),
+                  style: blackTextStyle.copyWith(fontSize: 20)),
               SizedBox(height: 12),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('12:30',
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.w300)),
+                  Text('12:30', style: greyTextStyle.copyWith(fontSize: 16)),
                   SizedBox(width: 6),
-                  Text('minutes',
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.w300)),
+                  Text('minutes', style: greyTextStyle.copyWith(fontSize: 16)),
                 ],
               ),
               SizedBox(height: 40),

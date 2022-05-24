@@ -18,12 +18,11 @@ class HomeView extends GetView<HomeController> {
           physics: BouncingScrollPhysics(),
           padding: EdgeInsets.fromLTRB(20, 20, 20, 100),
           children: [
-            Text('Explore Now',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.w500)),
+            Text('Explore Now', style: blackTextStyle.copyWith(fontSize: 24)),
             SizedBox(height: 10),
             Text(
               "Mencari kosan yang cozy",
-              style: TextStyle(color: grey, fontSize: 16),
+              style: greyTextStyle.copyWith(fontSize: 16),
             ),
             SizedBox(height: 30),
             PolularCities(),

@@ -90,8 +90,7 @@ class PolularCities extends GetView {
                   child: Center(
                     child: Text(
                       title,
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                      style: blackTextStyle.copyWith(fontSize: 16),
                     ),
                   )),
             )

@@ -13,14 +13,13 @@ class TitlePrice extends GetView {
           children: [
             Text(
               'Kuretakeso Hott',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.w500),
+              style: blackTextStyle.copyWith(fontSize: 22),
             ),
             SizedBox(height: 4),
             Row(
               children: [
-                Text(r'$52', style: TextStyle(color: purple, fontSize: 16)),
-                Text(' / month',
-                    style: TextStyle(color: grey, fontWeight: FontWeight.w300)),
+                Text(r'$52', style: purpleTextStyle.copyWith(fontSize: 16)),
+                Text(' / month', style: greyTextStyle.copyWith(fontSize: 16)),
               ],
             )
           ],

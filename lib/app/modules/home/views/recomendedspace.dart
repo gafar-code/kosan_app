@@ -77,10 +77,7 @@ class RecomendedSpace extends GetView {
                             Spacer(flex: 1),
                             Text(
                               '$star/5',
-                              style: TextStyle(
-                                  color: white,
-                                  fontSize: 13,
-                                  fontWeight: FontWeight.w500),
+                              style: whiteTextStyle.copyWith(fontSize: 13),
                             ),
                             Spacer(flex: 2),
                           ],
@@ -96,8 +93,7 @@ class RecomendedSpace extends GetView {
                 Spacer(flex: 2),
                 Text(
                   title,
-                  style: TextStyle(
-                      color: black, fontSize: 18, fontWeight: FontWeight.w500),
+                  style: blackTextStyle.copyWith(fontSize: 18),
                 ),
                 SizedBox(height: 8),
                 Row(
@@ -105,25 +101,18 @@ class RecomendedSpace extends GetView {
                     Text(
                       NumberFormat.currency(locale: "en_US", symbol: 'Rp.')
                           .format(price),
-                      style: TextStyle(
-                          color: purple,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500),
+                      style: purpleTextStyle.copyWith(fontSize: 16),
                     ),
                     Text(
                       " / month",
-                      style: TextStyle(
-                          color: grey,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w300),
+                      style: greyTextStyle.copyWith(fontSize: 16),
                     ),
                   ],
                 ),
                 Spacer(flex: 3),
                 Text(
                   addreass,
-                  style: TextStyle(
-                      color: grey, fontSize: 14, fontWeight: FontWeight.w300),
+                  style: greyTextStyle.copyWith(fontSize: 14),
                 ),
                 Spacer(flex: 2),
               ],

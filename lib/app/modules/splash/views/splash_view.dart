@@ -24,25 +24,17 @@ class SplashView extends GetView<SplashController> {
                     SvgPicture.asset("assets/icons/ic_circle.svg"),
                     SizedBox(height: 20),
                     Text("Find Cozy House",
-                        style: TextStyle(
-                            fontSize: 24, fontWeight: FontWeight.w500)),
+                        style: blackTextStyle.copyWith(fontSize: 24)),
                     Text("to Stay and Happy",
-                        style: TextStyle(
-                            fontSize: 24, fontWeight: FontWeight.w500)),
+                        style: blackTextStyle.copyWith(fontSize: 24)),
                     SizedBox(height: 20),
                     Text(
                       "Stop membuang banyak waktu",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w300,
-                          color: grey),
+                      style: greyTextStyle.copyWith(fontSize: 16),
                     ),
                     Text(
                       "pada tempat yang tidak habitable",
-                      style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w300,
-                          color: grey),
+                      style: greyTextStyle.copyWith(fontSize: 16),
                     ),
                     SizedBox(height: 40),
                     Material(
@@ -59,10 +51,7 @@ class SplashView extends GetView<SplashController> {
                           child: Center(
                             child: Text(
                               "Explore Now",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500,
-                                  color: white),
+                              style: whiteTextStyle.copyWith(fontSize: 18),
                             ),
                           ),
                         ),
