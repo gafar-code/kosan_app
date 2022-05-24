@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:kosan_app/app/routes/app_pages.dart';
 import 'package:kosan_app/theme.dart';
 
 class LocationDetail extends GetView {
@@ -32,10 +32,13 @@ class LocationDetail extends GetView {
                 ),
               ],
             ),
-            Image.asset(
-              'assets/icons/ic_location.png',
-              height: 40,
-              width: 40,
+            GestureDetector(
+              onTap: () => Get.toNamed(Routes.MAPS),
+              child: Image.asset(
+                'assets/icons/ic_location.png',
+                height: 40,
+                width: 40,
+              ),
             ),
           ],
         ),

@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import 'package:get/get.dart';
 import 'package:kosan_app/app/modules/detail/views/location.dart';
 import 'package:kosan_app/app/modules/detail/views/mainfacilities.dart';
 import 'package:kosan_app/app/modules/detail/views/photos.dart';
 import 'package:kosan_app/app/modules/detail/views/titleprice.dart';
+import 'package:kosan_app/app/routes/app_pages.dart';
 import 'package:kosan_app/theme.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 
@@ -68,19 +67,25 @@ class DetailView extends GetView<DetailController> {
                 ),
                 Center(
                   child: Container(
-                    height: 50,
-                    width: 327,
                     margin: EdgeInsets.symmetric(vertical: 40),
-                    decoration: BoxDecoration(
+                    child: Material(
                       color: purple,
                       borderRadius: BorderRadius.circular(17),
-                    ),
-                    child: Center(
-                      child: Text('Booking Now',
-                          style: TextStyle(
-                              color: white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.w500)),
+                      child: InkWell(
+                        borderRadius: BorderRadius.circular(17),
+                        onTap: () => Get.toNamed(Routes.CALL),
+                        child: SizedBox(
+                          height: 50,
+                          width: 327,
+                          child: Center(
+                            child: Text('Booking Now',
+                                style: TextStyle(
+                                    color: white,
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w500)),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
                 )
