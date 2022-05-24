@@ -18,7 +18,7 @@ class DetailView extends GetView<DetailController> {
         body: SafeArea(
             child: Stack(
       children: [
-        Image.asset('assets/images/img_detail.jpg',
+        Image.network(controller.space.imageUrl,
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             fit: BoxFit.cover),
@@ -37,10 +37,13 @@ class DetailView extends GetView<DetailController> {
           ),
         ),
         SlidingUpPanel(
-          maxHeight: MediaQuery.of(context).size.height * 0.7,
-          minHeight: 260,
+          maxHeight: MediaQuery.of(context).size.height * 0.8,
+          minHeight: 120,
           boxShadow: [],
           parallaxEnabled: true,
+          parallaxOffset: 1,
+          backdropEnabled: true,
+          backdropTapClosesPanel: true,
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(30),
             topRight: Radius.circular(30),
@@ -53,7 +56,7 @@ class DetailView extends GetView<DetailController> {
                   child: ListView(
                     controller: c,
                     physics: BouncingScrollPhysics(),
-                    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 40),
+                    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 30),
                     children: [
                       TitlePrice(),
                       SizedBox(height: 40),

@@ -4,44 +4,39 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:kosan_app/app/models/space.dart';
 import 'package:kosan_app/theme.dart';
 
-class RecomendedSpace extends GetView {
+import '../controllers/home_controller.dart';
+
+class RecomendedSpace extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
+    Get.put(HomeController());
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text('Recommended Space', style: TextStyle(fontSize: 16)),
-        Column(
-          children: [
-            _recomendedSpace(context,
-                title: 'Kuretakeso Hott',
-                price: 1000000,
-                addreass: 'Jl. Kuretakeso Hott'),
-            _recomendedSpace(context,
-                title: 'Roemah Nenek',
-                price: 500000,
-                addreass: "Jl. Roemah Nenek"),
-            _recomendedSpace(context,
-                title: 'Darring How',
-                price: 850000,
-                addreass: "Jl. Darring How"),
-          ],
-        )
+        FutureBuilder<List<Space>>(
+            future: controller.getRecommendedSpaces(),
+            builder: ((context, snapshot) {
+              if (snapshot.hasData) {
+                List<Space> data = snapshot.data!;
+                return Column(
+                  children: List.generate(data.length,
+                      (index) => _recomendedSpace(context, space: data[index])),
+                );
+              }
+              return Center(child: CircularProgressIndicator());
+            }))
       ],
     );
   }
 
-  Widget _recomendedSpace(BuildContext context,
-      {String title = "",
-      int price = 0,
-      int star = 5,
-      String image = "",
-      String addreass = ""}) {
+  Widget _recomendedSpace(BuildContext context, {required Space space}) {
     return GestureDetector(
       onTap: () {
-        Get.toNamed('/detail');
+        Get.toNamed('/detail', arguments: space);
       },
       child: Container(
         margin: EdgeInsets.only(top: 24),
@@ -56,7 +51,14 @@ class RecomendedSpace extends GetView {
                 children: [
                   ClipRRect(
                       borderRadius: BorderRadius.circular(18),
-                      child: Image.asset('assets/images/img_test.png')),
+                      child: SizedBox(
+                        height: 110,
+                        width: 130,
+                        child: Image.network(
+                          space.imageUrl,
+                          fit: BoxFit.cover,
+                        ),
+                      )),
                   Align(
                       alignment: Alignment.topRight,
                       child: Container(
@@ -76,7 +78,7 @@ class RecomendedSpace extends GetView {
                                 color: brown),
                             Spacer(flex: 1),
                             Text(
-                              '$star/5',
+                              '${space.rating}/5',
                               style: whiteTextStyle.copyWith(fontSize: 13),
                             ),
                             Spacer(flex: 2),
@@ -92,15 +94,15 @@ class RecomendedSpace extends GetView {
               children: [
                 Spacer(flex: 2),
                 Text(
-                  title,
+                  space.name,
                   style: blackTextStyle.copyWith(fontSize: 18),
                 ),
                 SizedBox(height: 8),
                 Row(
                   children: [
                     Text(
-                      NumberFormat.currency(locale: "en_US", symbol: 'Rp.')
-                          .format(price),
+                      NumberFormat.currency(locale: "en_US", symbol: r'$ ')
+                          .format(space.price),
                       style: purpleTextStyle.copyWith(fontSize: 16),
                     ),
                     Text(
@@ -111,7 +113,7 @@ class RecomendedSpace extends GetView {
                 ),
                 Spacer(flex: 3),
                 Text(
-                  addreass,
+                  space.address,
                   style: greyTextStyle.copyWith(fontSize: 14),
                 ),
                 Spacer(flex: 2),

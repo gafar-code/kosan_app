@@ -25,6 +25,9 @@ class DashboardView extends GetView<DashboardController> {
                     Center(
                       child: Text('Notification'),
                     ),
+                    Center(
+                      child: Text('Love'),
+                    ),
                   ],
                 ),
                 BottomNavBar()

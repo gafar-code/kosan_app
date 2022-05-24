@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:kosan_app/app/routes/app_pages.dart';
+import 'package:kosan_app/app/modules/detail/controllers/detail_controller.dart';
 import 'package:kosan_app/theme.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
-class LocationDetail extends GetView {
+class LocationDetail extends GetView<DetailController> {
   @override
   Widget build(BuildContext context) {
+    Get.find<DetailController>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -21,17 +23,23 @@ class LocationDetail extends GetView {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Jln. Kappan Sukses No.20',
+                  controller.space.address,
                   style: greyTextStyle.copyWith(fontSize: 16),
                 ),
                 Text(
-                  'Palembang',
+                  '${controller.space.city}, ${controller.space.country}',
                   style: greyTextStyle.copyWith(fontSize: 16),
                 ),
               ],
             ),
             GestureDetector(
-              onTap: () => Get.toNamed(Routes.MAPS),
+              onTap: () async {
+                if (await canLaunchUrlString(controller.space.mapUrl)) {
+                  launchUrlString(controller.space.mapUrl);
+                } else {
+                  print('Could not launch map');
+                }
+              },
               child: Image.asset(
                 'assets/icons/ic_location.png',
                 height: 40,

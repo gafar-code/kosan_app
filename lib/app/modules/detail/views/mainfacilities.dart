@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:kosan_app/app/modules/detail/controllers/detail_controller.dart';
 import 'package:kosan_app/theme.dart';
 
-class MainFacilities extends GetView {
+class MainFacilities extends GetView<DetailController> {
   @override
   Widget build(BuildContext context) {
+    Get.find<DetailController>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -14,11 +16,17 @@ class MainFacilities extends GetView {
         Row(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            _facilitiy('kitchen', numb: 2, icon: 'assets/icons/ic_kitchen.svg'),
+            _facilitiy('kitchen',
+                numb: controller.space.numberOfKitchens,
+                icon: 'assets/icons/ic_kitchen.svg'),
             Spacer(),
-            _facilitiy('bedroom', numb: 3, icon: 'assets/icons/ic_bedroom.svg'),
+            _facilitiy('bedroom',
+                numb: controller.space.numberOfBedrooms,
+                icon: 'assets/icons/ic_bedroom.svg'),
             Spacer(),
-            _facilitiy('board', numb: 3, icon: 'assets/icons/ic_board.svg'),
+            _facilitiy('board',
+                numb: controller.space.numberOfCupboards,
+                icon: 'assets/icons/ic_board.svg'),
           ],
         )
       ],
