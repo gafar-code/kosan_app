@@ -11,7 +11,7 @@ cd kosan_app
 flutter pub get
 flutter run
 ```
-## Acknowledgements
+## Pengetahuan
 
  - [Flutter](https://flutter.dev)
  - [Getx State Management](https://https://pub.dev/packages/get)
