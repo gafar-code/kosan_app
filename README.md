@@ -2,8 +2,15 @@
 # KOSAN APP
 - slicing design dari figma ke flutter,
 - consume API
-- state-management menggunakann Getx
+- state-management menggunakan Getx
 
+## CARA INSTALL
+```ruby
+git clone http://github.com/gafar-code/kosan_app
+cd kosan_app
+flutter pub get
+flutter run
+```
 ## Acknowledgements
 
  - [Flutter](https://flutter.dev)
