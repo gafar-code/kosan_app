@@ -4,7 +4,7 @@
 - consume API
 - state-management menggunakan Getx
 
-## CARA INSTALL
+## Instalasi
 ```ruby
 git clone http://github.com/gafar-code/kosan_app
 cd kosan_app
