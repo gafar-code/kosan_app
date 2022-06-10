@@ -11,6 +11,9 @@ cd kosan_app
 flutter pub get
 flutter run
 ```
+## Unduh Aplikasi 
+- [klik disini](https://github.com/gafar-code/kosan_app/releases/download/alpha/app-release.apk)
+
 ## Pengetahuan
 
  - [Flutter](https://flutter.dev)
